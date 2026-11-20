@@ -25,7 +25,7 @@ from cryptography.x509.oid import AuthorityInformationAccessOID, ExtensionOID
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_FILE = ROOT / "scraper" / "offices.json"
-OUTPUT_FILE = ROOT / "data" / "appointments.json"
+OUTPUT_FILE = ROOT / "docs" / "data" / "appointments.json"
 
 MONTEVIDEO = timezone(timedelta(hours=-3))
 PAUSE_BETWEEN_OFFICES = 2  # seconds, to stay gentle with the server

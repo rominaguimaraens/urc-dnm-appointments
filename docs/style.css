@@ -1,0 +1,173 @@
+@font-face {
+  font-family: "Bogart";
+  src: url("fonts/bogart-semibold.woff2") format("woff2");
+  font-weight: 600;
+  unicode-range: U+0000-002F, U+003A-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bogart";
+  src: url("fonts/bogart-extrabold.woff2") format("woff2");
+  font-weight: 800;
+  unicode-range: U+0000-002F, U+003A-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122;
+  font-display: swap;
+}
+
+:root {
+  --blush: #FFDCE4;
+  --rose: #F7C6D7;
+  --pink: #F77FA7;
+  --mauve: #5F4D53;
+  --ink: #3a2c31;
+  --plum: #5734A0;
+  --line: rgba(95, 77, 83, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--blush); }
+
+body {
+  margin: 0 auto;
+  max-width: 560px;
+  min-height: 100vh;
+  padding: max(28px, env(safe-area-inset-top)) 22px max(36px, env(safe-area-inset-bottom));
+  color: var(--mauve);
+  font: 400 16px/1.5 Inter, system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ------------------------------------------------------------- header */
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.mark { flex-shrink: 0; }
+h1 {
+  margin: 0;
+  font: 800 30px/1.05 Bogart, "Bricolage Grotesque", Georgia, serif;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.meta {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.legend {
+  margin: 22px 0 6px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 4px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px 0 10px;
+}
+.dot:first-child { margin-left: 0; }
+.dot.soon { background: var(--plum); }
+.dot.mid { background: var(--pink); }
+.dot.later { background: var(--rose); box-shadow: inset 0 0 0 1px rgba(95, 77, 83, 0.25); }
+
+/* -------------------------------------------------------------- months */
+
+.month { margin-top: 34px; }
+.month h2 {
+  margin: 0 0 4px;
+  font: 800 22px/1.2 Bogart, "Bricolage Grotesque", Georgia, serif;
+  color: var(--plum);
+}
+.month.none h2 { color: var(--mauve); }
+
+/* ------------------------------------------------------------- offices */
+
+.office { border-bottom: 1px solid var(--line); }
+.office:last-child { border-bottom: 0; }
+
+.office summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+}
+.office summary::-webkit-details-marker { display: none; }
+.office summary:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; border-radius: 6px; }
+
+.place { flex: 1; min-width: 0; }
+.city {
+  display: block;
+  font: 600 20px/1.2 Bogart, "Bricolage Grotesque", Georgia, serif;
+  color: var(--ink);
+}
+.dept { font-size: 13px; }
+
+.pill {
+  flex-shrink: 0;
+  font: 800 16px/1 Bogart, "Bricolage Grotesque", Georgia, serif;
+  padding: 9px 14px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pill.soon { background: var(--plum); color: #fff; }
+.pill.mid { background: var(--pink); color: var(--ink); }
+.pill.later { background: var(--rose); color: var(--mauve); }
+
+.chev {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.office[open] .chev { transform: rotate(180deg); }
+
+.details {
+  padding: 0 0 18px;
+  font-size: 15px;
+}
+.details p { margin: 0 0 10px; }
+.slots {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+.slots li {
+  display: grid;
+  grid-template-columns: 120px auto;
+  padding: 3px 0;
+}
+.slots time { font-weight: 600; color: var(--ink); }
+.details a {
+  color: var(--plum);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.none .office summary { cursor: default; }
+.none .city { color: var(--mauve); }
+.none .office summary { padding: 10px 0; }
+.status-note { font-size: 13px; flex-shrink: 0; }
+
+/* ------------------------------------------------------------- footer */
+
+.foot {
+  margin-top: 40px;
+  font-size: 12px;
+}
+
+.empty {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chev { transition: none; }
+}
