@@ -1,0 +1,25 @@
+{
+  "empresa": 4,
+  "agenda": 16,
+  "base_url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml",
+  "offices": [
+    {"id": 107, "city": "Montevideo", "department": "Montevideo", "address": "Oficina Central, Mercedes 1004", "note": "Residencia definitiva"},
+    {"id": 238, "city": "Ciudad de la Costa", "department": "Canelones", "address": "Centro Cívico Costa Urbana Shopping, Av. Giannattasio km 21, local 003b"},
+    {"id": 105, "city": "Punta del Este", "department": "Maldonado", "address": "Gorlero esq. Calle 23, El Corral (Plaza de los Artesanos)"},
+    {"id": 110, "city": "Piriápolis", "department": "Maldonado", "address": "Continuación Piria s/n"},
+    {"id": 102, "city": "Colonia", "department": "Colonia", "address": "18 de Julio 428"},
+    {"id": 101, "city": "Carmelo", "department": "Colonia", "address": "Zorrilla de San Martín 343"},
+    {"id": 108, "city": "Nueva Palmira", "department": "Colonia", "address": "Dársena Higueritas s/n, continuación Torres Leiva"},
+    {"id": 103, "city": "Durazno", "department": "Durazno", "address": "Rivera 621"},
+    {"id": 106, "city": "Mercedes", "department": "Soriano", "address": "18 de Julio y Roosevelt"},
+    {"id": 104, "city": "Fray Bentos", "department": "Río Negro", "address": "18 de Julio 1225"},
+    {"id": 109, "city": "Paysandú", "department": "Paysandú", "address": "Independencia 940"},
+    {"id": 111, "city": "Salto", "department": "Salto", "address": ""},
+    {"id": 95,  "city": "Artigas", "department": "Artigas", "address": "Misiones 102"},
+    {"id": 96,  "city": "Bella Unión", "department": "Artigas", "address": "Romeo Bianchi esq. Br. Artigas"},
+    {"id": 99,  "city": "Rivera", "department": "Rivera", "address": "Florencio Sánchez 914"},
+    {"id": 98,  "city": "Melo", "department": "Cerro Largo", "address": "Rodó 661"},
+    {"id": 100, "city": "Río Branco", "department": "Cerro Largo", "address": "Paso de Frontera"},
+    {"id": 97,  "city": "Chuy", "department": "Rocha", "address": "Ruta 9 km 337"}
+  ]
+}
