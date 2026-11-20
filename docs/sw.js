@@ -1,5 +1,5 @@
 // Keeps the app opening offline, and always tries for fresh appointment data first.
-var CACHE = "dnm-schedule-v1";
+var CACHE = "dnm-schedule-v2";
 var SHELL = [
   "./",
   "index.html",

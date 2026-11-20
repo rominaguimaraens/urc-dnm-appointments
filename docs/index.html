@@ -22,21 +22,29 @@
     <img class="mark" src="icons/flower.png" alt="" width="44" height="44">
     <div>
       <h1>DNM Schedule</h1>
-      <p class="meta"><span>Residencia legal</span> · <span id="updated">loading…</span></p>
+      <p class="meta" id="meta"><span>Residencia legal</span> · <span id="updated">loading…</span></p>
     </div>
   </header>
 
-  <p class="legend" aria-label="Pill colors">
-    <span class="dot soon"></span>within 30 days
-    <span class="dot mid"></span>within 60
-    <span class="dot later"></span>later
-  </p>
+  <div class="tabs" role="tablist" aria-label="Schedules">
+    <button type="button" role="tab" id="tab-res" aria-controls="panel-res" aria-selected="true">Residency</button>
+    <button type="button" role="tab" id="tab-rc" aria-controls="panel-rc" aria-selected="false" tabindex="-1">Registro Civil</button>
+  </div>
 
-  <main id="list" aria-live="polite"></main>
+  <section id="panel-res" role="tabpanel" aria-labelledby="tab-res">
+    <p class="legend" aria-label="Pill colors">
+      <span class="dot soon"></span>within 30 days
+      <span class="dot mid"></span>within 60
+      <span class="dot later"></span>later
+    </p>
+    <div id="list" aria-live="polite"></div>
+    <p class="foot">From DNM's public calendar, checked every hour.</p>
+  </section>
 
-  <footer class="foot">
-    From DNM's public calendar, checked every hour.
-  </footer>
+  <section id="panel-rc" role="tabpanel" aria-labelledby="tab-rc" hidden>
+    <div id="rc-list" aria-live="polite"></div>
+    <p class="foot">Foreign birth certificate registration at Uruguay 933, checked every 10 minutes.</p>
+  </section>
 
   <script src="app.js"></script>
 </body>

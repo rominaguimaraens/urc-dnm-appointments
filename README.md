@@ -30,5 +30,6 @@ DNM's page doesn't show the year, so a date earlier than today is read as next y
 - Open it on your phone and use **Add to Home screen** to install it.
 - Pill colors: purple = within 30 days, pink = within 60, pale pink = later.
 - Tap an office for its address, the next three slots and a link to its DNM calendar.
+- The **Registro Civil** tab shows the foreign birth certificate calendars from the `urc-schedule-tracking` watcher (its `state.json`): open slots when there are any, otherwise the month of the last ones it saw.
 
 Fonts: Bogart (trial files, digits replaced by Bricolage Grotesque because the trial blanks them out) and Inter.

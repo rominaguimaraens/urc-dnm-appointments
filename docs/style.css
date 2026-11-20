@@ -56,8 +56,32 @@ h1 {
   font-size: 14px;
 }
 
+/* ---------------------------------------------------------------- tabs */
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 24px 0 4px;
+}
+.tabs button {
+  font: 600 15px/1 Inter, system-ui, sans-serif;
+  color: var(--mauve);
+  background: transparent;
+  border: 1.5px solid rgba(95, 77, 83, 0.35);
+  border-radius: 999px;
+  padding: 11px 18px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.tabs button[aria-selected="true"] {
+  background: var(--plum);
+  border-color: var(--plum);
+  color: #fff;
+}
+.tabs button:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+
 .legend {
-  margin: 22px 0 6px;
+  margin: 18px 0 6px;
   font-size: 13px;
   display: flex;
   align-items: center;
@@ -155,6 +179,36 @@ h1 {
 .none .city { color: var(--mauve); }
 .none .office summary { padding: 10px 0; }
 .status-note { font-size: 13px; flex-shrink: 0; }
+
+/* ------------------------------------------------------- registro civil */
+
+.rc { margin-top: 30px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+.rc:last-child { border-bottom: 0; }
+.rc h2 {
+  margin: 0;
+  font: 800 22px/1.2 Bogart, "Bricolage Grotesque", Georgia, serif;
+  color: var(--ink);
+}
+.rc .who { margin: 2px 0 14px; font-size: 13px; }
+.rc .state {
+  display: inline-block;
+  font: 800 16px/1 Bogart, "Bricolage Grotesque", Georgia, serif;
+  padding: 9px 14px 8px;
+  border-radius: 999px;
+  margin: 0 0 14px;
+}
+.rc .state.open { background: var(--plum); color: #fff; }
+.rc .state.closed { background: var(--rose); color: var(--mauve); }
+.rc .last { margin: 0 0 16px; font-size: 15px; }
+.rc .last strong { color: var(--ink); }
+.rc .slots { margin-bottom: 14px; font-size: 15px; }
+.rc a {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--plum);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
 
 /* ------------------------------------------------------------- footer */
 

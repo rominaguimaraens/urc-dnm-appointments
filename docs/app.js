@@ -112,6 +112,7 @@
     }
 
     list.innerHTML = out.join("") || '<p class="empty">No offices to show right now.</p>';
+    window.__resData = data;
     updated.textContent = ago(data.checked_at);
     updated.dataset.at = data.checked_at;
   }
@@ -132,15 +133,146 @@
       });
   }
 
+  // ------------------------------------------------------- Registro Civil
+
+  var RC_URL = "https://raw.githubusercontent.com/rominaguimaraens/urc-schedule-tracking/main/state.json";
+  var rcList = document.getElementById("rc-list");
+  var RC_AGENDAS = [
+    {
+      id: "dgrec-partidas-titulares-representantes",
+      title: "Holder or representative",
+      who: "Parents booking for their kids, or anyone booking for someone else",
+      url: "https://sae.mec.gub.uy/sae/agendarReserva/Paso1.xhtml?e=9&a=84"
+    },
+    {
+      id: "dgrec-partidas-solo-titulares",
+      title: "Holder only",
+      who: "The certificate holder, who can add a spouse and kids",
+      url: "https://sae.mec.gub.uy/sae/agendarReserva/Paso1.xhtml?e=9&a=82"
+    }
+  ];
+
+  function parseStamp(stamp) {
+    // "2026-12-12 14:30 UTC" -> Date
+    return stamp ? new Date(stamp.replace(" UTC", "Z").replace(" ", "T")) : null;
+  }
+
+  var seenFmt = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", timeZone: "America/Montevideo" });
+
+  function rcBlock(agenda, entry) {
+    entry = entry || {};
+    var slots = entry.slots || [];
+    var body;
+
+    if (entry.status === "open" && slots.length) {
+      body =
+        '<p class="state open">Open now</p>' +
+        '<ul class="slots">' + slots.map(function (s) {
+          return "<li><span>" + esc(dayFmt.format(utcDate(s.date))) + "</span><time>" + esc(s.time) + "</time></li>";
+        }).join("") + "</ul>" +
+        '<a href="' + esc(agenda.url) + '" target="_blank" rel="noopener">Book on Registro Civil</a>';
+    } else if (entry.status === "closed" || entry.status === "open") {
+      body = '<p class="state closed">No spots open</p>';
+      var last = entry.last_slots || [];
+      if (last.length) {
+        var firstM = last[0].date.slice(0, 7);
+        var lastM = last[last.length - 1].date.slice(0, 7);
+        var shortMonth = new Intl.DateTimeFormat("en-GB", { month: "long", timeZone: "UTC" });
+        var lastMonth = firstM === lastM
+          ? monthFmt.format(utcDate(firstM + "-01"))
+          : (firstM.slice(0, 4) === lastM.slice(0, 4) ? shortMonth : monthFmt).format(utcDate(firstM + "-01")) +
+            " and " + monthFmt.format(utcDate(lastM + "-01"));
+        var seen = parseStamp(entry.last_seen_open);
+        body +=
+          '<p class="last">Last open appointments were in <strong>' + esc(lastMonth) + "</strong>" +
+          (seen ? " (spotted " + esc(seenFmt.format(seen)) + ")" : "") + ".</p>";
+      }
+    } else {
+      body = '<p class="last">Couldn’t check this calendar right now.</p>';
+    }
+
+    return (
+      '<section class="rc"><h2>' + esc(agenda.title) + '</h2><p class="who">' + esc(agenda.who) + "</p>" +
+      body + "</section>"
+    );
+  }
+
+  function loadRegistroCivil() {
+    fetch(RC_URL, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.json();
+      })
+      .then(function (state) {
+        rcList.innerHTML = RC_AGENDAS.map(function (a) { return rcBlock(a, state[a.id]); }).join("");
+      })
+      .catch(function () {
+        if (!rcList.children.length) {
+          rcList.innerHTML = '<p class="empty">Couldn’t load Registro Civil. Check your connection and reopen the app.</p>';
+        }
+      });
+  }
+
+  // ---------------------------------------------------------------- tabs
+
+  var tabs = [
+    { tab: document.getElementById("tab-res"), panel: document.getElementById("panel-res"), hash: "" },
+    { tab: document.getElementById("tab-rc"), panel: document.getElementById("panel-rc"), hash: "#registro-civil" }
+  ];
+  var meta = document.getElementById("meta");
+  var resMeta = meta.innerHTML;
+
+  function select(index, focus) {
+    tabs.forEach(function (t, i) {
+      var on = i === index;
+      t.tab.setAttribute("aria-selected", on ? "true" : "false");
+      t.tab.tabIndex = on ? 0 : -1;
+      t.panel.hidden = !on;
+    });
+    if (focus) tabs[index].tab.focus();
+    if (index === 1) {
+      meta.textContent = "Foreign birth certificates";
+    } else {
+      meta.innerHTML = resMeta;
+      updated = document.getElementById("updated");
+      if (updated && window.__resData) {
+        updated.textContent = ago(window.__resData.checked_at);
+        updated.dataset.at = window.__resData.checked_at;
+      }
+    }
+    try { localStorage.setItem("dnm-tab", String(index)); } catch (e) {}
+    if (history.replaceState) history.replaceState(null, "", tabs[index].hash || location.pathname);
+  }
+
+  tabs.forEach(function (t, i) {
+    t.tab.addEventListener("click", function () { select(i); });
+    t.tab.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+        e.preventDefault();
+        select((i + 1) % tabs.length, true);
+      }
+    });
+  });
+
+  var start = location.hash === "#registro-civil" ? 1 : 0;
+  if (!location.hash) {
+    try { start = Number(localStorage.getItem("dnm-tab")) === 1 ? 1 : 0; } catch (e) {}
+  }
+
   // Keep the "updated X min ago" line honest, and refresh when reopened.
   setInterval(function () {
-    if (updated.dataset.at) updated.textContent = ago(updated.dataset.at);
+    if (updated && updated.dataset.at) updated.textContent = ago(updated.dataset.at);
   }, 60000);
   document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "visible" && Date.now() - lastLoad > 5 * 60000) load();
+    if (document.visibilityState === "visible" && Date.now() - lastLoad > 5 * 60000) {
+      load();
+      loadRegistroCivil();
+    }
   });
 
   load();
+  loadRegistroCivil();
+  select(start);
 
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js").catch(function () {});
