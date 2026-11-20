@@ -244,6 +244,7 @@
       }
     }
     try { localStorage.setItem("dnm-tab", String(index)); } catch (e) {}
+    if (typeof scheduleSignup === "function") scheduleSignup(index === 1);
     if (history.replaceState) history.replaceState(null, "", tabs[index].hash || location.pathname);
   }
 
@@ -256,6 +257,55 @@
       }
     });
   });
+
+  // ------------------------------------------------------- alerts signup
+
+  var dialog = document.getElementById("rc-signup");
+  var SIGNUP_KEY = "rc-signup";  // "done", or the time it was last closed
+  var signupTimer = null;
+
+  function store(key, value) {
+    try { if (value == null) localStorage.removeItem(key); else localStorage.setItem(key, value); } catch (e) {}
+  }
+  function read(key) {
+    try { return localStorage.getItem(key); } catch (e) { return null; }
+  }
+
+  function openSignup() {
+    if (dialog && !dialog.open && dialog.showModal) dialog.showModal();
+  }
+
+  function shouldAutoOpen() {
+    var v = read(SIGNUP_KEY);
+    if (v === "done") return false;
+    // After someone closes it, wait 30 days before offering it again.
+    return !v || Date.now() - Number(v) > 30 * 86400000;
+  }
+
+  if (dialog) {
+    document.getElementById("open-signup").addEventListener("click", openSignup);
+    document.getElementById("close-signup").addEventListener("click", function () { dialog.close(); });
+    dialog.addEventListener("click", function (e) {
+      if (e.target === dialog) dialog.close();  // click on the dimmed background
+    });
+    dialog.addEventListener("close", function () {
+      if (read(SIGNUP_KEY) !== "done") store(SIGNUP_KEY, String(Date.now()));
+    });
+    // Brevo shows #success-message after a good signup; remember it.
+    var success = document.getElementById("success-message");
+    new MutationObserver(function () {
+      if (success.offsetParent !== null || getComputedStyle(success).display !== "none") store(SIGNUP_KEY, "done");
+    }).observe(success, { attributes: true, attributeFilter: ["style", "class"] });
+  }
+
+  function scheduleSignup(onRegistroCivil) {
+    clearTimeout(signupTimer);
+    if (onRegistroCivil && dialog && shouldAutoOpen()) {
+      signupTimer = setTimeout(function () {
+        if (!tabs[1].panel.hidden) openSignup();
+      }, 5000);
+    }
+  }
 
   var start = location.hash === "#registro-civil" ? 1 : 0;
   if (!location.hash) {

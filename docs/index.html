@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,9 +44,104 @@
 
   <section id="panel-rc" role="tabpanel" aria-labelledby="tab-rc" hidden>
     <div id="rc-list" aria-live="polite"></div>
+    <button type="button" class="alerts-btn" id="open-signup">Get alerts by email</button>
     <p class="foot">Foreign birth certificate registration at Uruguay 933, checked every 10 minutes.</p>
   </section>
 
+
+  <dialog id="rc-signup" aria-labelledby="signup-title">
+    <button type="button" class="dialog-close" id="close-signup" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <!-- Brevo form: field names, ids and classes must stay as they are for Brevo's script -->
+    <div class="sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">That didn’t go through. Please try again.</span>
+          </div>
+        </div>
+        <div id="success-message" class="sib-form-message-panel">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Almost done. Check your inbox and confirm your email to start getting alerts.</span>
+          </div>
+        </div>
+
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://d29b67fa.sibforms.com/serve/MUIFAHxbKSMqm1YVn12J1sO3fGRWDc3LuHa9_sg9UECIOvdzF-tXohpoIdagHwzMbySx7SCGb6IA7yOfhmWlYy4WOPtmM10Ct62X0_LZh6uMF27nElh2GgiYT9lOu6LvECKbYjxKMaAAtUylsQQOdocrh6eY48wICqRnhp77YLdh2iD14-HbH8N7yHQdwkfv_EwzpMNCT3Uc6UYQyw==" data-type="subscription">
+            <h2 id="signup-title" class="signup-title">Get Registro Civil alerts</h2>
+            <p class="signup-lead">We’ll email you as soon as Registro Civil opens appointments to register foreign birth certificates.</p>
+
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <label class="entry__label" for="FIRSTNAME" data-required="*">First name</label>
+                  <div class="entry__field">
+                    <input class="input" maxlength="200" type="text" id="FIRSTNAME" name="FIRSTNAME" autocomplete="given-name" data-required="true" required>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-input sib-form-block">
+              <div class="form__entry entry_block">
+                <div class="form__label-row">
+                  <label class="entry__label" for="EMAIL" data-required="*">Email</label>
+                  <div class="entry__field">
+                    <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="email" value="" data-required="true" required>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-optin sib-form-block" data-required="true">
+              <div class="form__entry entry_mcq">
+                <div class="form__label-row">
+                  <label class="entry__label visually-hidden" for="OPT_IN" data-required="*">Consent</label>
+                  <div class="entry__choice">
+                    <label class="consent">
+                      <input type="checkbox" class="input_replaced" value="1" id="OPT_IN" name="OPT_IN" required>
+                      <span class="checkbox checkbox_tick_positive"></span><span class="consent-text">Email me when Registro Civil appointments open. I’m OK with Uruguay Relocation Companion keeping my name and email to also send occasional updates about residency in Uruguay (appointment availability, process changes and URC services). I can unsubscribe anytime.</span>
+                    </label>
+                  </div>
+                </div>
+                <label class="entry__error entry__error--primary"></label>
+              </div>
+            </div>
+
+            <div class="sib-form-block">
+              <button class="sib-form-block__button sib-form-block__button-with-loader signup-btn" form="sib-form" type="submit">
+                <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
+                Notify me
+              </button>
+            </div>
+
+            <p class="signup-privacy">Your details are stored by Uruguay Relocation Companion (Romina Guimaraens, <a href="mailto:contact@relocationuy.com">contact@relocationuy.com</a>) using Brevo, and are never sold or shared. See <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank" rel="noopener">Brevo’s privacy policy</a>.</p>
+
+            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="locale" value="en">
+          </form>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
+    window.LOCALE = "en";
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "That email doesn’t look right. Please check it.";
+    window.REQUIRED_ERROR_MESSAGE = "This field can’t be empty.";
+    window.GENERIC_INVALID_MESSAGE = "Something doesn’t look right. Please check and try again.";
+    window.INVALID_NUMBER = "Something doesn’t look right. Please check and try again.";
+    window.INVALID_DATE = "Please enter a valid date";
+    window.REQUIRED_MULTISELECT_MESSAGE = "Please select at least 1 option";
+    window.translation = { common: { selectedList: "{quantity} list selected", selectedLists: "{quantity} lists selected", selectedOption: "{quantity} selected", selectedOptions: "{quantity} selected" } };
+    var AUTOHIDE = Boolean(0);
+  </script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
