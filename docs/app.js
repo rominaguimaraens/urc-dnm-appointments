@@ -173,18 +173,21 @@
         '<a href="' + esc(agenda.url) + '" target="_blank" rel="noopener">Book on Registro Civil</a>';
     } else if (entry.status === "closed" || entry.status === "open") {
       body = '<p class="state closed">No spots open</p>';
-      var last = entry.last_slots || [];
-      if (last.length) {
-        var firstM = last[0].date.slice(0, 7);
-        var lastM = last[last.length - 1].date.slice(0, 7);
+      var months = entry.last_open_months || [];
+      if (!months.length && entry.last_slots && entry.last_slots.length) {
+        months = [entry.last_slots[0].date.slice(0, 7), entry.last_slots[entry.last_slots.length - 1].date.slice(0, 7)];
+      }
+      if (months.length) {
+        var firstM = months[0];
+        var lastM = months[months.length - 1];
         var shortMonth = new Intl.DateTimeFormat("en-GB", { month: "long", timeZone: "UTC" });
-        var lastMonth = firstM === lastM
+        var label = firstM === lastM
           ? monthFmt.format(utcDate(firstM + "-01"))
           : (firstM.slice(0, 4) === lastM.slice(0, 4) ? shortMonth : monthFmt).format(utcDate(firstM + "-01")) +
             " and " + monthFmt.format(utcDate(lastM + "-01"));
         var seen = parseStamp(entry.last_seen_open);
         body +=
-          '<p class="last">Last open appointments were in <strong>' + esc(lastMonth) + "</strong>" +
+          '<p class="last">Last appointments open were in <strong>' + esc(label) + "</strong>" +
           (seen ? " (spotted " + esc(seenFmt.format(seen)) + ")" : "") + ".</p>";
       }
     } else {
