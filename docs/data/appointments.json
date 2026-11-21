@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-20T23:00-03:00",
+  "checked_at": "2026-11-21T00:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -21,8 +21,8 @@
         },
         {
           "date": "2027-05-07",
-          "time": "09:00",
-          "label": "Viernes 7 de mayo - 09:00 h"
+          "time": "13:30",
+          "label": "Viernes 7 de mayo - 13:30 h"
         }
       ],
       "status": "open"
