@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-21T12:00-03:00",
+  "checked_at": "2026-11-21T13:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -33,14 +33,8 @@
       "department": "Canelones",
       "address": "Centro Cívico Costa Urbana Shopping, Av. Giannattasio km 21, local 003b",
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=238",
-      "slots": [
-        {
-          "date": "2027-05-11",
-          "time": "12:30",
-          "label": "Martes 11 de mayo - 12:30 h"
-        }
-      ],
-      "status": "open"
+      "slots": [],
+      "status": "full"
     },
     {
       "id": 105,
