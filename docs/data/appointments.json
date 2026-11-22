@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T10:00-03:00",
+  "checked_at": "2026-11-22T11:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -10,11 +10,6 @@
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=107",
       "slots": [
         {
-          "date": "2027-05-06",
-          "time": "13:30",
-          "label": "Jueves 6 de mayo - 13:30 h"
-        },
-        {
           "date": "2027-05-07",
           "time": "13:30",
           "label": "Viernes 7 de mayo - 13:30 h"
@@ -23,6 +18,11 @@
           "date": "2027-05-10",
           "time": "09:00",
           "label": "Lunes 10 de mayo - 09:00 h"
+        },
+        {
+          "date": "2027-05-10",
+          "time": "10:00",
+          "label": "Lunes 10 de mayo - 10:00 h"
         }
       ],
       "status": "open"
