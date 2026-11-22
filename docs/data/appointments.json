@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-22T07:00-03:00",
+  "checked_at": "2026-11-22T08:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -42,14 +42,8 @@
       "department": "Maldonado",
       "address": "Gorlero esq. Calle 23, El Corral (Plaza de los Artesanos)",
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=105",
-      "slots": [
-        {
-          "date": "2026-11-25",
-          "time": "11:30",
-          "label": "Miércoles 25 de noviembre - 11:30 h"
-        }
-      ],
-      "status": "open"
+      "slots": [],
+      "status": "full"
     },
     {
       "id": 110,
