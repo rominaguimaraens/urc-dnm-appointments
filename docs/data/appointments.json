@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-23T09:00-03:00",
+  "checked_at": "2026-11-23T10:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -152,11 +152,6 @@
       "slots": [
         {
           "date": "2027-03-09",
-          "time": "09:15",
-          "label": "Martes 9 de marzo - 09:15 h"
-        },
-        {
-          "date": "2027-03-09",
           "time": "10:15",
           "label": "Martes 9 de marzo - 10:15 h"
         },
@@ -164,6 +159,11 @@
           "date": "2027-03-10",
           "time": "09:15",
           "label": "Miércoles 10 de marzo - 09:15 h"
+        },
+        {
+          "date": "2027-03-10",
+          "time": "10:15",
+          "label": "Miércoles 10 de marzo - 10:15 h"
         }
       ],
       "status": "open"
