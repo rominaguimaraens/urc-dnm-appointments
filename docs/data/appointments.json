@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-24T19:00-03:00",
+  "checked_at": "2026-11-24T20:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -141,11 +141,6 @@
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=106",
       "slots": [
         {
-          "date": "2027-03-17",
-          "time": "09:15",
-          "label": "Miércoles 17 de marzo - 09:15 h"
-        },
-        {
           "date": "2027-03-18",
           "time": "09:15",
           "label": "Jueves 18 de marzo - 09:15 h"
@@ -154,6 +149,11 @@
           "date": "2027-03-19",
           "time": "09:15",
           "label": "Viernes 19 de marzo - 09:15 h"
+        },
+        {
+          "date": "2027-03-23",
+          "time": "09:15",
+          "label": "Martes 23 de marzo - 09:15 h"
         }
       ],
       "status": "open"
@@ -225,9 +225,9 @@
           "label": "Jueves 18 de febrero - 10:30 h"
         },
         {
-          "date": "2027-02-18",
-          "time": "11:30",
-          "label": "Jueves 18 de febrero - 11:30 h"
+          "date": "2027-02-23",
+          "time": "09:30",
+          "label": "Martes 23 de febrero - 09:30 h"
         }
       ],
       "status": "open"
