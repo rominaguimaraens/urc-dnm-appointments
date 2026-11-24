@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-24T14:00-03:00",
+  "checked_at": "2026-11-24T15:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -240,19 +240,9 @@
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=96",
       "slots": [
         {
-          "date": "2027-01-05",
-          "time": "09:30",
-          "label": "Martes 5 de enero - 09:30 h"
-        },
-        {
           "date": "2027-01-07",
           "time": "11:30",
           "label": "Jueves 7 de enero - 11:30 h"
-        },
-        {
-          "date": "2027-01-12",
-          "time": "09:30",
-          "label": "Martes 12 de enero - 09:30 h"
         }
       ],
       "status": "open"
