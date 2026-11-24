@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-24T12:00-03:00",
+  "checked_at": "2026-11-24T13:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -11,11 +11,6 @@
       "slots": [
         {
           "date": "2027-05-13",
-          "time": "09:00",
-          "label": "Jueves 13 de mayo - 09:00 h"
-        },
-        {
-          "date": "2027-05-13",
           "time": "13:30",
           "label": "Jueves 13 de mayo - 13:30 h"
         },
@@ -23,6 +18,11 @@
           "date": "2027-05-14",
           "time": "09:00",
           "label": "Viernes 14 de mayo - 09:00 h"
+        },
+        {
+          "date": "2027-05-14",
+          "time": "10:00",
+          "label": "Viernes 14 de mayo - 10:00 h"
         }
       ],
       "status": "open"
@@ -225,14 +225,14 @@
           "label": "Jueves 11 de febrero - 09:30 h"
         },
         {
-          "date": "2027-02-16",
-          "time": "09:30",
-          "label": "Martes 16 de febrero - 09:30 h"
-        },
-        {
           "date": "2027-02-17",
           "time": "09:30",
           "label": "Miércoles 17 de febrero - 09:30 h"
+        },
+        {
+          "date": "2027-02-17",
+          "time": "10:30",
+          "label": "Miércoles 17 de febrero - 10:30 h"
         }
       ],
       "status": "open"
