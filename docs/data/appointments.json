@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-25T12:00-03:00",
+  "checked_at": "2026-11-25T14:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -16,13 +16,13 @@
         },
         {
           "date": "2027-05-21",
-          "time": "09:00",
-          "label": "Viernes 21 de mayo - 09:00 h"
+          "time": "11:00",
+          "label": "Viernes 21 de mayo - 11:00 h"
         },
         {
           "date": "2027-05-21",
-          "time": "11:00",
-          "label": "Viernes 21 de mayo - 11:00 h"
+          "time": "13:30",
+          "label": "Viernes 21 de mayo - 13:30 h"
         }
       ],
       "status": "open"
@@ -38,6 +38,16 @@
           "date": "2027-06-01",
           "time": "11:45",
           "label": "Martes 1 de junio - 11:45 h"
+        },
+        {
+          "date": "2027-06-02",
+          "time": "09:30",
+          "label": "Miércoles 2 de junio - 09:30 h"
+        },
+        {
+          "date": "2027-06-02",
+          "time": "10:30",
+          "label": "Miércoles 2 de junio - 10:30 h"
         }
       ],
       "status": "open"
@@ -69,11 +79,6 @@
       "slots": [
         {
           "date": "2027-04-16",
-          "time": "09:15",
-          "label": "Viernes 16 de abril - 09:15 h"
-        },
-        {
-          "date": "2027-04-16",
           "time": "12:15",
           "label": "Viernes 16 de abril - 12:15 h"
         },
@@ -81,6 +86,11 @@
           "date": "2027-04-22",
           "time": "12:15",
           "label": "Jueves 22 de abril - 12:15 h"
+        },
+        {
+          "date": "2027-04-23",
+          "time": "09:15",
+          "label": "Viernes 23 de abril - 09:15 h"
         }
       ],
       "status": "open"
