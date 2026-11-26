@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-26T00:00-03:00",
+  "checked_at": "2026-11-26T01:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -11,11 +11,6 @@
       "slots": [
         {
           "date": "2027-05-21",
-          "time": "11:00",
-          "label": "Viernes 21 de mayo - 11:00 h"
-        },
-        {
-          "date": "2027-05-21",
           "time": "13:30",
           "label": "Viernes 21 de mayo - 13:30 h"
         },
@@ -23,6 +18,11 @@
           "date": "2027-05-24",
           "time": "13:30",
           "label": "Lunes 24 de mayo - 13:30 h"
+        },
+        {
+          "date": "2027-05-25",
+          "time": "13:30",
+          "label": "Martes 25 de mayo - 13:30 h"
         }
       ],
       "status": "open"
