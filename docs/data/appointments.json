@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-26T12:00-03:00",
+  "checked_at": "2026-11-26T13:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -68,11 +68,6 @@
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=102",
       "slots": [
         {
-          "date": "2027-04-22",
-          "time": "12:15",
-          "label": "Jueves 22 de abril - 12:15 h"
-        },
-        {
           "date": "2027-04-23",
           "time": "12:15",
           "label": "Viernes 23 de abril - 12:15 h"
@@ -81,6 +76,11 @@
           "date": "2027-04-28",
           "time": "09:15",
           "label": "Miércoles 28 de abril - 09:15 h"
+        },
+        {
+          "date": "2027-04-28",
+          "time": "10:15",
+          "label": "Miércoles 28 de abril - 10:15 h"
         }
       ],
       "status": "open"
@@ -200,8 +200,14 @@
       "department": "Paysandú",
       "address": "Independencia 940",
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=109",
-      "slots": [],
-      "status": "full"
+      "slots": [
+        {
+          "date": "2026-12-01",
+          "time": "12:00",
+          "label": "Martes 1 de diciembre - 12:00 h"
+        }
+      ],
+      "status": "open"
     },
     {
       "id": 111,
