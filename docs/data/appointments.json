@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-26T09:00-03:00",
+  "checked_at": "2026-11-26T10:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -84,13 +84,13 @@
         },
         {
           "date": "2027-04-23",
-          "time": "09:15",
-          "label": "Viernes 23 de abril - 09:15 h"
+          "time": "12:15",
+          "label": "Viernes 23 de abril - 12:15 h"
         },
         {
-          "date": "2027-04-23",
-          "time": "10:15",
-          "label": "Viernes 23 de abril - 10:15 h"
+          "date": "2027-04-28",
+          "time": "09:15",
+          "label": "Miércoles 28 de abril - 09:15 h"
         }
       ],
       "status": "open"
