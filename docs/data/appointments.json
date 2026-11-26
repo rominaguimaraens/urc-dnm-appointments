@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-26T13:00-03:00",
+  "checked_at": "2026-11-26T14:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -16,13 +16,13 @@
         },
         {
           "date": "2027-05-26",
-          "time": "09:00",
-          "label": "Miércoles 26 de mayo - 09:00 h"
-        },
-        {
-          "date": "2027-05-26",
           "time": "13:30",
           "label": "Miércoles 26 de mayo - 13:30 h"
+        },
+        {
+          "date": "2027-05-27",
+          "time": "09:00",
+          "label": "Jueves 27 de mayo - 09:00 h"
         }
       ],
       "status": "open"
@@ -205,6 +205,11 @@
           "date": "2026-12-01",
           "time": "12:00",
           "label": "Martes 1 de diciembre - 12:00 h"
+        },
+        {
+          "date": "2026-12-08",
+          "time": "10:30",
+          "label": "Martes 8 de diciembre - 10:30 h"
         }
       ],
       "status": "open"
