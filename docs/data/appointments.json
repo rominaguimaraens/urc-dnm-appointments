@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-28T06:00-03:00",
+  "checked_at": "2026-11-28T07:00-03:00",
   "offices": [
     {
       "id": 107,
@@ -9,11 +9,6 @@
       "note": "Residencia definitiva",
       "url": "https://sae.minterior.gub.uy/sae/agendarReserva/Paso1.xhtml?e=4&a=16&r=107",
       "slots": [
-        {
-          "date": "2027-05-28",
-          "time": "13:30",
-          "label": "Viernes 28 de mayo - 13:30 h"
-        },
         {
           "date": "2027-05-31",
           "time": "11:00",
